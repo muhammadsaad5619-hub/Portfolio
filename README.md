@@ -2,7 +2,7 @@
 
 A personal portfolio website built to showcase my skills, projects, and contact information.
 
-🔗 **Live Demo:** [https://portfolio-rho-two-vxmrr8zn4p.vercel.app/](https://portfolio-xxxx.vercel.app) <!-- replace with your actual Vercel URL -->
+🔗 **Live Demo:** [https://portfolio-rho-two-vxmrr8zn4p.vercel.app/](https://portfolio-rho-two-vxmrr8zn4p.vercel.app/) <!-- replace with your actual Vercel URL -->
 
 ## 📌 Overview
 
