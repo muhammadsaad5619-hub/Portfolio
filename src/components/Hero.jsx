@@ -1,12 +1,13 @@
 import resumeFile from '../assets/MuhammadSaad_Resume.jpg';
+import profilePic from '../assets/pic.jpeg';
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <div className="hero-bg">
-        <div className="orb orb-1" />
-        <div className="orb orb-2" />
-        <div className="orb orb-3" />
+      {/* Background profile image on the right */}
+      <div className="hero-bg-image">
+        <img src={profilePic} alt="" />
+        <div className="hero-bg-overlay" />
       </div>
 
       <div className="container">
@@ -14,23 +15,22 @@ export default function Hero() {
           <p className="hero-greeting">&lt;Hello World /&gt;</p>
 
           <h1 className="hero-name">
-            I'm <span className="highlight">Muhammad Saad</span>
+            Hi, I'm <span className="highlight">Muhammad Saad</span>
           </h1>
 
-          <p className="hero-title">
-            Full Stack Developer | MERN Stack | CS Student at FAST-NUCES
-          </p>
+          <p className="hero-title">Full Stack Developer</p>
 
           <p className="hero-tagline">
-            Building real-world solutions through code
+            MERN Stack Developer & CS Student at FAST-NUCES. Passionate about building
+            real-world solutions through clean, efficient, and scalable code.
           </p>
 
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">
-              <i className="fas fa-code" /> View My Projects
+              View My Projects
             </a>
             <a href="#contact" className="btn btn-outline">
-              <i className="fas fa-envelope" /> Contact Me
+              Let's Talk
             </a>
             <a
               href={resumeFile}
@@ -38,23 +38,33 @@ export default function Hero() {
               title="Download Resume"
               download="MuhammadSaad_Resume.jpg"
             >
-              <i className="fas fa-download" /> Download Resume
+              <i className="fas fa-download" /> Resume
             </a>
           </div>
 
-          <div className="hero-stats">
-            <div className="hero-stat">
-              <h3>4+</h3>
-              <p>Projects Built</p>
-            </div>
-            <div className="hero-stat">
-              <h3>5+</h3>
-              <p>Technologies</p>
-            </div>
-            <div className="hero-stat">
-              <h3>2027</h3>
-              <p>Graduating</p>
-            </div>
+          <div className="hero-socials">
+            <a
+              href="https://github.com/muhammadsaad5619-hub?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <i className="fab fa-github" />
+            </a>
+            <a
+              href="https://linkedin.com/in/muhammad-saad01099329a"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i className="fab fa-linkedin-in" />
+            </a>
+            <a
+              href="mailto:muhammadsaad5619@gmail.com"
+              aria-label="Email"
+            >
+              <i className="fas fa-envelope" />
+            </a>
           </div>
         </div>
       </div>
