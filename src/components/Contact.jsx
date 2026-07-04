@@ -1,17 +1,45 @@
+'use client';
+
 import { useState } from 'react';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: '', email: '', message: '' });
-    setTimeout(() => setSent(false), 4000);
+    setLoading(true);
+    setError('');
+    setSent(false);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSent(true);
+        setForm({ name: '', email: '', message: '' });
+        setTimeout(() => setSent(false), 5000);
+      } else {
+        setError(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      setError('An error occurred. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -119,8 +147,22 @@ export default function Contact() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary form-submit">
-              {sent ? (
+            {error && (
+              <div style={{ color: '#ff6b6b', marginBottom: '1rem', fontSize: '0.9rem', textAlign: 'center' }}>
+                {error}
+              </div>
+            )}
+            {sent && (
+              <div style={{ color: '#51cf66', marginBottom: '1rem', fontSize: '0.9rem', textAlign: 'center' }}>
+                Your message has been sent successfully.
+              </div>
+            )}
+            <button type="submit" className="btn btn-primary form-submit" disabled={loading}>
+              {loading ? (
+                <>
+                  <i className="fas fa-spinner fa-spin" /> Sending...
+                </>
+              ) : sent ? (
                 <>
                   <i className="fas fa-check" /> Message Sent!
                 </>

@@ -1,34 +1,39 @@
 # Muhammad Saad | Portfolio
 
-A personal portfolio website built to showcase my skills, projects, and contact information.
+A modern, fully responsive personal portfolio website built with **Next.js 15** and **React 19**.
 
-🔗 **Live Demo:** [https://portfolio-rho-two-vxmrr8zn4p.vercel.app/](https://portfolio-rho-two-vxmrr8zn4p.vercel.app/) 
+🔗 **Live Demo:** [https://portfolio-rho-two-vxmrr8zn4p.vercel.app/](https://portfolio-rho-two-vxmrr8zn4p.vercel.app/)
 
 ## 📌 Overview
 
-This is a fully responsive personal portfolio site built with React and Vite. It highlights my background, technical skills, featured projects, and provides a way for visitors to get in touch.
+This is a single-page portfolio site showcasing my background, technical skills, featured projects, and a functional contact form that sends emails via the **Resend** API.
 
 ## ✨ Features
 
-- Clean, modern, responsive design
+- Clean, modern, responsive dark-themed design
 - About section with personal introduction
-- Skills showcase
-- Projects gallery with details/links
-- Contact section
-- Fast load times with Vite's build optimization
+- Skills showcase with categorized tech stack
+- Projects gallery with details and tech tags
+- **Working contact form** — messages are sent directly to my email via Resend
+- SEO optimized with OpenGraph & Twitter meta tags
+- Optimized font loading with `next/font`
+- Server-side API route for secure email handling
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React (Vite)
-- **Styling:** Plain CSS / CSS Modules
+- **Framework:** Next.js 15 (App Router)
+- **UI:** React 19
+- **Styling:** Vanilla CSS with CSS custom properties
+- **Email:** Resend API
 - **Deployment:** Vercel
 - **Version Control:** Git & GitHub
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher recommended)
+- Node.js (v18 or higher recommended)
 - npm
+- A [Resend](https://resend.com) API key (for the contact form)
 
 ### Installation
 
@@ -42,11 +47,15 @@ cd Portfolio
 # Install dependencies
 npm install
 
+# Set up environment variables
+# Create a .env.local file with:
+# RESEND_API_KEY=your_resend_api_key_here
+
 # Run the development server
 npm run dev
 ```
 
-The app will be running at `http://localhost:5173` by default.
+The app will be running at `http://localhost:3000` by default.
 
 ### Build for production
 
@@ -54,28 +63,42 @@ The app will be running at `http://localhost:5173` by default.
 npm run build
 ```
 
-This generates an optimized build inside the `dist` folder.
+This generates an optimized build inside the `.next/` folder.
 
 ## 📂 Project Structure
 
 ```
 Portfolio/
-├── public/
+├── app/
+│   ├── api/
+│   │   └── contact/
+│   │       └── route.js        # API route for contact form emails
+│   ├── layout.jsx              # Root layout with metadata & fonts
+│   └── page.jsx                # Main page (assembles all components)
 ├── src/
 │   ├── components/
-│   ├── assets/
-│   ├── App.jsx
-│   └── main.jsx
-├── index.html
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   ├── hooks/
+│   │   └── useTilt.js
+│   ├── assets/                 # Static images (profile pic, etc.)
+│   └── index.css               # Global styles
+├── public/                     # Static files (favicon, resume, etc.)
+├── next.config.mjs
 ├── package.json
-└── vite.config.js
+└── .env.local                  # Environment variables (not committed)
 ```
 
 ## 📬 Contact
 
 - **Name:** Muhammad Saad
 - **GitHub:** [@muhammadsaad5619-hub](https://github.com/muhammadsaad5619-hub)
-<!-- Add your email, LinkedIn, or other links here -->
+- **Email:** muhammadsaad5619@gmail.com
 
 ## 📄 License
 

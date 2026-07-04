@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
+'use client';
 
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { useEffect } from 'react';
+import Navbar from '../src/components/Navbar';
+import Hero from '../src/components/Hero';
+import About from '../src/components/About';
+import Skills from '../src/components/Skills';
+import Projects from '../src/components/Projects';
+import Contact from '../src/components/Contact';
+import Footer from '../src/components/Footer';
 
 export default function App() {
   useEffect(() => {
@@ -34,7 +35,6 @@ export default function App() {
       <About />
       <Skills />
       <Projects />
-
       <Contact />
       <Footer />
     </>

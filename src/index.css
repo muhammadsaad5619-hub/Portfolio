@@ -21,8 +21,8 @@
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
   --shadow-glow: 0 0 30px rgba(6, 182, 212, 0.15);
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', 'Fira Code', monospace;
   --nav-height: 70px;
 }
 
@@ -269,10 +269,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-bg-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  /* next/image with fill handles sizing via inline styles */
 }
 
 /* Dark gradient overlay to blend image into background */

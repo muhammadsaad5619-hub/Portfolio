@@ -1,12 +1,20 @@
-import resumeFile from '../assets/MuhammadSaad_Resume.jpg';
-import profilePic from '../assets/pic.jpeg';
+'use client';
+
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
       {/* Background profile image on the right */}
       <div className="hero-bg-image">
-        <img src={profilePic} alt="" />
+        <Image
+          src="/pic.jpeg"
+          alt="Muhammad Saad profile"
+          fill
+          sizes="(max-width: 768px) 100vw, 55vw"
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          priority
+        />
         <div className="hero-bg-overlay" />
       </div>
 
@@ -33,7 +41,7 @@ export default function Hero() {
               Let's Talk
             </a>
             <a
-              href={resumeFile}
+              href="/MuhammadSaad_Resume.jpg"
               className="btn btn-outline"
               title="Download Resume"
               download="MuhammadSaad_Resume.jpg"
